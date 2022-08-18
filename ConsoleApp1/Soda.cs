@@ -9,8 +9,10 @@ namespace ConsoleApp1
     public class Soda
     {
         public string Name { get; set; }
+        //Added Price field as it's also Soda property
         public int Price { get; set; }
-        public int Nr { get; set; }
+        //Changed name because "AmountAvailable" seemed more acccurate than "Nr" 
+        public int AmountAvailable { get; set; }
 
     }
 }
