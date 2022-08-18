@@ -10,7 +10,7 @@ namespace ConsoleApp1
     {
         public string Name { get; set; }
         //Added Price field as it's also Soda property
-        public int Price { get; set; }
+        public uint Price { get; set; }
         //Changed name because "AmountAvailable" seemed more acccurate than "Nr" 
         public int AmountAvailable { get; set; }
 

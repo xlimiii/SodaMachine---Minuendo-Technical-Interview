@@ -8,7 +8,7 @@ namespace ConsoleApp1
 {
     public static class SodaMachine
     {
-        private static int _money = 0;
+        private static uint _money = 0;
         private static readonly Soda[] _inventory = new[] { new Soda { Name = "coke", Price = 20, AmountAvailable = 4 }, new Soda { Name = "sprite", Price = 30, AmountAvailable = 5 }, new Soda { Name = "fanta", Price = 20, AmountAvailable = 3 } };
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace ConsoleApp1
                     break;
             }
         }
-        private static void InsertMoney(int count)
+        private static void InsertMoney(uint count)
         {
             _money += count;
         }
@@ -182,7 +182,7 @@ namespace ConsoleApp1
             Console.WriteLine("\n\nAvailable commands:");
             Console.WriteLine("[1] Insert money - Money put into money slot");
             Console.WriteLine($"[2] Order ({string.Join("/", availableSodas.Select(x => x.Name))}) - Order from machines buttons");
-            Console.WriteLine($"[3] Sms order ({string.Join(" / ", availableSodas.Select(x => x.Name))}) - Order sent by sms");
+            Console.WriteLine($"[3] Sms order ({string.Join("/", availableSodas.Select(x => x.Name))}) - Order sent by sms");
             Console.WriteLine("[4] Recall - gives money back");
             Console.WriteLine("-------");
             Console.WriteLine("Inserted money: " + _money);
@@ -225,12 +225,12 @@ namespace ConsoleApp1
             }
             return userChoice;
         }
-        private static int GetUserMoney()
+        private static uint GetUserMoney()
         {
             Console.Write("Enter an amount of money: ");
             var moneyAmountInput = Console.ReadLine();
-            int moneyAmount;
-            while (!int.TryParse(moneyAmountInput, out moneyAmount))
+            uint moneyAmount;
+            while (!uint.TryParse(moneyAmountInput, out moneyAmount))
             {
                 Console.Write("Incorrect value. Enter an amount of money: ");
                 moneyAmountInput = Console.ReadLine();
